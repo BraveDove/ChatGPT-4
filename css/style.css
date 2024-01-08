@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Элементы теперь располагаются вертикально */
+    align-items: stretch; /* Это заставит дочерние элементы растягиваться на всю ширину контейнера */
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input {
+    box-sizing: border-box;
+    width: 100%; /* Это гарантирует, что элемент займет всю ширину контейнера */
+    padding: 10px;
+    margin-bottom: 20px; /* Добавлено для отступа между элементами */
+    font-size: 20px;
+    outline: none; /* Исправлено с 0 на none */
+}
+
+#response {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0e0e0;
+}
+
+.btn {
+    width: 100px;
+    font-size: 22px;
+    padding: 5px 20px 5px 20px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
