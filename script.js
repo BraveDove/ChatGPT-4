@@ -10,7 +10,7 @@ async function sendMessage() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer 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'
+                'Authorization': 'Bearer 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'
             },
             body: JSON.stringify({
                 model: "gpt-4", // Укажите используемую модель, если требуется
