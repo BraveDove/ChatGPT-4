@@ -2,7 +2,7 @@ async function sendMessage() {
     const userInput = document.getElementById('user-input').value;
     const responseContainer = document.getElementById('response');
   
-    // Предполагая, что прокси-сервер запущен локально на порту 3000
+     
     const proxyUrl = 'https://chat-gpt-4-alpha-five.vercel.app';
   
     try {
@@ -10,10 +10,9 @@ async function sendMessage() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
-          // Не отправляйте ключи API из клиентского кода
         },
         body: JSON.stringify({
-          model: "gpt-4-1106-preview", // Используйте актуальную модель
+          model: "gpt-4-1106-preview",
           messages: [{ 
             'role': 'user',
             'content': userInput
