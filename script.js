@@ -2,7 +2,7 @@ async function sendMessage() {
     const userInput = document.getElementById('user-input').value;
     const responseContainer = document.getElementById('response');
   
-    const proxyUrl = 'https://chat-gpt-4-alpha-five.vercel.app';
+    const proxyUrl = 'https://chat-gpt-4-alpha-five.vercel.app/api/openai';
 
     const express = require('express');
     const express = require('express');
