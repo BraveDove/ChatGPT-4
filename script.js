@@ -1,35 +1,36 @@
 async function sendMessage() {
     const userInput = document.getElementById('user-input').value;
     const responseContainer = document.getElementById('response');
-
-    // URL API для создания завершения чата
-    const apiUrl = 'https://api.openai.com/v1/chat/completions';
-
+  
+    // Предполагая, что прокси-сервер запущен локально на порту 3000
+    const proxyUrl = 'http://localhost:3000/api/openai';
+  
     try {
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer YOUR_API_KEY'
-            },
-            body: JSON.stringify({
-                model: "gpt-4", // Укажите используемую модель, если требуется
-                messages: [{ // Структура сообщений для API /chat/completions может отличаться
-                    'role': 'user', // 'user' для пользователя или 'assistant' для помощника
-                    'content': userInput
-                }],
-                max_tokens: 150
-            })
-        });
-
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-
-        const data = await response.json();
-        responseContainer.innerText = data.choices[0].message.content.trim(); // Обращение к свойству ответа может отличаться
+      const response = await fetch(proxyUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+          // Не отправляйте ключи API из клиентского кода
+        },
+        body: JSON.stringify({
+          model: "gpt-4-1106-preview", // Используйте актуальную модель
+          messages: [{ 
+            'role': 'user',
+            'content': userInput
+          }],
+          max_tokens: 150
+        })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const data = await response.json();
+      responseContainer.innerText = data.choices[0].message.content.trim();
     } catch (error) {
-        console.error('Ошибка при запросе к API: ', error);
-        responseContainer.innerText = 'Ошибка при получении ответа.';
+      console.error('Ошибка при запросе к API: ', error);
+      responseContainer.innerText = 'Ошибка при получении ответа.';
     }
-}
+  }
+  
