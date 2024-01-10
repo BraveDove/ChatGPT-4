@@ -3,7 +3,7 @@ async function sendMessage() {
     const responseContainer = document.getElementById('response');
   
     // Предполагая, что прокси-сервер запущен локально на порту 3000
-    const proxyUrl = 'http://https://chat-gpt-4-alpha-five.vercel.app/api/openai/api/openai';
+    const proxyUrl = 'https://chat-gpt-4-alpha-five.vercel.app/api/openai/api/openai';
   
     try {
       const response = await fetch(proxyUrl, {
