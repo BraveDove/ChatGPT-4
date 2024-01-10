@@ -3,6 +3,16 @@ async function sendMessage() {
     const responseContainer = document.getElementById('response');
   
     const proxyUrl = 'https://chat-gpt-4-alpha-five.vercel.app';
+
+    const express = require('express');
+    const express = require('express');
+    const cors = require('cors');
+    
+    const app = express();
+
+    app.use(cors());
+    
+
   
     try {
       const response = await fetch(proxyUrl, {
