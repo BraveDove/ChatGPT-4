@@ -5,7 +5,6 @@ async function sendMessage() {
     const proxyUrl = 'https://chat-gpt-4-alpha-five.vercel.app/api/openai';
 
     const express = require('express');
-    const express = require('express');
     const cors = require('cors');
     
     const app = express();
