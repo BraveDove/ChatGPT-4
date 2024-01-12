@@ -1,3 +1,4 @@
+console.log(`index.js is connected`);
 const express = require('express');
 const app = express();
 const fetch = require('node-fetch');
