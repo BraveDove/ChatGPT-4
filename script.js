@@ -2,7 +2,7 @@ async function sendMessage() {
   const userInput = document.getElementById('user-input').value;
   const responseContainer = document.getElementById('response');
   try {
-      const response = await fetch('https://chat-gpt-4-alpha-five.vercel.app/api/openai', {
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({ userInput })
